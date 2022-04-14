@@ -62,4 +62,4 @@ data$Activity <- factor(data[,"Activity"], levels = activityLabels$classLabels, 
 #Exercise 5: Create a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 avg <- data %>% group_by(Subject, Activity) %>% summarise(across(everything(), mean), .groups = "drop")
-write.table(avg, file="TidyData.txt")
+write.table(avg, file="TidyData.txt", row.names = FALSE)
